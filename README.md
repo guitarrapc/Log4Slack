@@ -1,3 +1,8 @@
+## Customization
+
+- [x] Add support .NETStandard 2.0
+- [x] Remove System.Drawing dependency for multiplatform and non-GDI+ support
+
 Log4Slack
 =========
 
