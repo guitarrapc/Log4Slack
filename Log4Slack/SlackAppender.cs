@@ -5,7 +5,6 @@ using System.IO;
 using log4net.Appender;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Drawing;
 
 namespace Log4Slack {
 
@@ -103,8 +102,8 @@ namespace Log4Slack {
                 var mapping = Mappings != null ? Mappings.FirstOrDefault(m => m.level.Equals(loggingEvent.Level.DisplayName,StringComparison.InvariantCultureIgnoreCase)) : null;
                 if (mapping != null)
                 {
-                    var color = Color.FromName(mapping.backColor);
-                    var hex = color.IsKnownColor ? String.Format("#{0:X2}{1:X2}{2:X2}", color.R, color.G, color.B) : mapping.backColor;
+                    var color = ColorKnown.FromName(mapping.backColor);
+                    var hex = color.IsKnownColor() ? String.Format("#{0:X2}{1:X2}{2:X2}", color.Red, color.Green, color.Blue) : mapping.backColor;
                     theAttachment.Color = !string.IsNullOrEmpty(hex) ? hex : theAttachment.Color;
                 }
 
