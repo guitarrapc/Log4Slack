@@ -6,6 +6,9 @@ using System.Reflection;
 
 namespace Log4Slack
 {
+    /// <summary>
+    /// ref : https://github.com/guitarrapc/Color
+    /// </summary>
     public struct Colors
     {
         public static Color Empty => new Color(0x00000000);
